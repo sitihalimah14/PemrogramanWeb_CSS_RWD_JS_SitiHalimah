@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gambar Pencemaran Lingkungan</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #ffe6f0;
+            color: #800080;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 32px;
+            font-weight: 900;
+            color: #800060;
+            margin-bottom: 25px;
+            text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.7);
+        }
+
+        .grid {
+            display: grid;
+            gap: 25px;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 15px;
+            padding: 15px;
+            text-align: center;
+            border: 2px solid #ffb3d9;
+            box-shadow: 0 4px 12px rgba(255, 0, 150, 0.25);
+            transition: 0.3s;
+            animation: fadeIn 0.8s ease;
+        }
+
+        /* Animasi fade lembut */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 8px 20px rgba(255, 0, 150, 0.35);
+        }
+
+        .card h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #b30086;
+            font-weight: bold;
+            text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.7);
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 12px;
+            border: 3px solid #ffccdd;
+            box-shadow: 0 3px 8px rgba(255, 100, 170, 0.35);
+            transition: 0.3s;
+        }
+
+        .card img:hover {
+            transform: scale(1.05);
+        }
+
+        /* button back */
+        .back-button {
+            display: block;
+            margin: 30px auto;
+            padding: 12px 25px;
+            background-color: #ff4f7d;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .back-button:hover {
+            background-color: #ff1f67;
+            transform: translateY(-3px);
+        }
+
+        /* Grid responsif */
+        @media (max-width: 600px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        @media (min-width: 600px) and (max-width: 992px) {
+            .grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (min-width: 992px) {
+            .grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Gambar Contoh Pencemaran Lingkungan</h1>
+
+    <div class="grid">
+        <div class="card">
+            <h3>Pencemaran Udara</h3>
+            <img src="assets/pencemaran_udara.jpeg" alt="Pencemaran Udara">
+        </div>
+        <div class="card">
+            <h3>Pencemaran Air</h3>
+            <img src="assets/pencemaran_air.jpeg" alt="Pencemaran Air">
+        </div>
+        <div class="card">
+            <h3>Pencemaran Tanah</h3>
+            <img src="assets/pencemaran_tanah.jpeg" alt="Pencemaran Tanah">
+        </div>
+        <div class="card">
+            <h3>Pencemaran Suara</h3>
+            <img src="assets/pencemaran_suara.jpeg" alt="Pencemaran Suara">
+        </div>
+        <div class="card">
+            <h3>Pencemaran Cahaya</h3>
+            <img src="assets/pencemaran_cahaaya.jpeg" alt="Pencemaran Cahaya">
+        </div>
+        <div class="card">
+            <h3>Pencemaran Plastik</h3>
+            <img src="assets/pencemaran_plastik.jpeg" alt="Pencemaran Plastik">
+        </div>
+        <div class="card">
+            <h3>Pencemaran Radioaktif</h3>
+            <img src="assets/pencemaran_radioaktif.jpeg" alt="Pencemaran Radioaktif">
+        </div>
+    </div>
+
+    <button class="back-button" onclick="window.location.href='index.html'">Kembali</button>
+</body>
+</html>

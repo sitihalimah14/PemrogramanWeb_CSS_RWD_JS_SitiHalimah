@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Informasi Pencemaran Lingkungan</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #ffe6f0; 
+            color: #800080; 
+        }
+
+        /* identitas */
+        .identity {
+            background: linear-gradient(135deg, #ffb3d9, #ffccdd);
+            padding: 25px;
+            border-radius: 18px;
+            box-shadow: 0 6px 18px rgba(255, 0, 150, 0.25);
+            border: 3px solid #ff80bf;
+            text-align: center;
+            margin-bottom: 30px;
+            animation: fadeIn 0.8s ease;
+        }
+
+        .identity h1 {
+            font-size: 32px;
+            color: #ff4f7d;
+            margin: 0;
+            font-weight: 900;
+            text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.7);
+        }
+
+        
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* mode normal */
+        .general-info {
+            margin-bottom: 20px;
+        }
+        .issue {
+            margin-bottom: 20px;
+        }
+        .issue-title {
+            cursor: pointer;
+            background-color: #ffb3d9; 
+            color: #800080;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            text-align: justify;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+        .issue-title:hover {
+            background-color: #ff99d6;
+            padding-left: 20px;
+        }
+        .issue-explanation {
+            text-align: justify;
+            display: block;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #ffccdd;
+            border-left: 5px solid #800080;
+            border-radius: 8px;
+            box-shadow: inset 0 0 10px rgba(255, 150, 200, 0.3);
+        }
+
+        /* card */
+        .issue {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 10px rgba(255, 0, 150, 0.2);
+            transition: 0.3s;
+            border: 2px solid #ffb3d9;
+        }
+
+        .issue:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 18px rgba(255, 0, 150, 0.3);
+        }
+
+        /* buttons */
+        .mode-button, .image-button {
+            display: block;
+            padding: 12px 25px;
+            background-color: #ff4f7d;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            font-size: 16px;
+            transition: 0.3s;
+            border: none;
+            cursor: pointer;
+            margin: 20px auto;
+            width: fit-content;
+        }
+
+        /* mode messy */
+        .messy-mode {
+            background-color: #ff00aa !important;
+            color: #ffddff !important;
+            font-family: "Comic Sans MS", cursive, Papyrus !important;
+            letter-spacing: 3px;
+            word-spacing: 10px;
+            line-height: 1.2;
+            transform: rotate(0.8deg);
+        }
+
+        .messy-mode * {
+            transition: none !important;
+        }
+
+        .messy-mode h1, 
+        .messy-mode h2 {
+            font-size: 45px !important;
+            color: #ff0066 !important;
+            text-shadow: 3px 3px 2px yellow;
+            transform: rotate(-2deg);
+        }
+
+        .messy-mode p {
+            font-size: 20px !important;
+            background: rgba(255, 255, 0, 0.4);
+            padding: 10px;
+            margin: 15px;
+            border: 3px dotted red;
+            transform: rotate(1.5deg);
+        }
+
+        .messy-mode .issue-title {
+            background-color: #ff3333 !important;
+            color: yellow !important;
+            font-size: 26px !important;
+            padding: 15px;
+            border: 5px dashed blue !important;
+            transform: rotate(3deg);
+            letter-spacing: 5px;
+        }
+
+        .messy-mode .issue-explanation {
+            background-color: #00ffff !important;
+            border-left: 10px double purple !important;
+            font-size: 18px !important;
+            margin-left: 30px;
+            transform: rotate(-2deg);
+        }
+
+        .messy-mode .mode-button, 
+        .messy-mode .image-button {
+            background-color: #000 !important;
+            color: lime !important;
+            border: 4px double red !important;
+            font-size: 22px !important;
+            padding: 15px;
+            transform: rotate(-4deg);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- IDENTITAS -->
+    <div class="identity">
+        <h1>SITI HALIMAH | 202431182</h1>
+    </div>
+
+    <!-- INFORMASI UMUM -->
+    <div class="general-info" style="text-align: justify;">
+        <p>Pencemaran lingkungan adalah masuknya zat berbahaya atau energi ke dalam lingkungan alami, yang menyebabkan penurunan kualitas hidup secara signifikan. Penyebab utamanya hampir selalu berasal dari aktivitas manusia, seperti pembuangan limbah industri yang tidak terkelola, asap kendaraan bermotor, dan penggunaan pestisida berlebihan. Hal ini berdampak serius pada ketiga medium utama: udara terkontaminasi oleh gas beracun, air tercemar oleh bahan kimia dan sampah, dan tanah menjadi tidak subur akibat limbah padat dan cair, mengganggu keseimbangan ekosistem global.</p>
+    </div>
+
+    <!-- DAFTAR MASALAH -->
+    <div class="issues">
+        <div class="issue">
+            <button class="issue-title" onclick="toggleExplanation(0)">Pencemaran Udara</button>
+            <p class="issue-explanation" id="exp0">Pencemaran udara terjadi ketika atmosfer dipenuhi oleh zat-zat berbahaya seperti gas (karbon monoksida, sulfur dioksida, nitrogen oksida) dan partikel padat (PM2.5, jelaga) dari sumber-sumber seperti asap kendaraan bermotor, emisi pabrik, dan pembakaran bahan bakar fosil. Dampak langsungnya sangat signifikan, menyebabkan kabut asap di perkotaan, hujan asam, dan yang paling parah, masalah kesehatan serius bagi manusia, termasuk peningkatan risiko penyakit pernapasan dan jantung. Selain itu, polusi udara yang terdiri dari gas rumah kaca adalah pendorong utama perubahan iklim dan pemanasan global, sehingga menjadikannya salah satu bentuk pencemaran lingkungan yang paling mendesak untuk ditangani di skala lokal maupun global.</p>
+        </div>
+        <div class="issue">
+            <button class="issue-title" onclick="toggleExplanation(1)">Pencemaran Air</button>
+            <p class="issue-explanation" id="exp1">Pencemaran air adalah bentuk degradasi lingkungan yang terjadi ketika badan air seperti sungai, danau, laut, dan air tanah terkontaminasi oleh zat berbahaya. Sumber utama pencemaran ini sangat beragam, meliputi pembuangan limbah industri yang mengandung bahan kimia beracun, aliran limbah pertanian yang kaya akan pestisida dan pupuk kimia, serta pembuangan langsung limbah rumah tangga dan kotoran manusia ke dalam sumber air. Dampak pencemaran air sangat merusak; tidak hanya menyebabkan penyebaran penyakit melalui air minum yang terkontaminasi, tetapi juga memicu kematian massal kehidupan akuatik, mengganggu ekosistem laut dan tawar, serta membuat air tidak aman untuk dikonsumsi atau digunakan dalam irigasi pertanian.<p>
+        </div>
+        <div class="issue">
+            <button class="issue-title" onclick="toggleExplanation(2)">Pencemaran Tanah</button>
+            <p class="issue-explanation" id="exp2">Pencemaran tanah, atau degradasi lahan, terjadi ketika bahan kimia berbahaya atau limbah padat mencemari permukaan atau bawah permukaan tanah. Penyebab utamanya meliputi praktik pertanian yang intensif dengan penggunaan pestisida dan herbisida berlebihan, kebocoran dari tempat pembuangan limbah industri atau tangki penyimpanan bawah tanah, dan penumpukan sampah padat yang tidak dapat terurai, terutama plastik, di tempat pembuangan akhir ilegal. Dampak pencemaran tanah sangat merugikan: kontaminan dapat meresap ke dalam air tanah, meracuni sumber air minum, diserap oleh tanaman pangan sehingga membahayakan rantai makanan, dan secara langsung mengurangi kesuburan tanah, membuat lahan tidak cocok lagi untuk pertanian atau habitat alami.</p>
+        </div>
+        <div class="issue">
+            <button class="issue-title" onclick="toggleExplanation(3)">Pencemaran Suara</button>
+            <p class="issue-explanation" id="exp3">Pencemaran suara, atau polusi suara, didefinisikan sebagai kebisingan berlebihan atau mengganggu yang memiliki dampak merugikan pada aktivitas manusia dan kehidupan organisme lain. Sumber utama pencemaran ini lazim ditemukan di perkotaan dan kawasan industri, meliputi lalu lintas padat (kendaraan, kereta api, pesawat terbang), mesin konstruksi, aktivitas pabrik yang bising, dan acara publik dengan volume musik yang sangat tinggi. Meskipun sering dianggap kurang berbahaya dibandingkan polusi fisik seperti sampah atau asap, kebisingan kronis memiliki dampak kesehatan yang signifikan, termasuk gangguan pendengaran, stres, tekanan darah tinggi, gangguan tidur, serta penurunan produktivitas kerja dan kualitas hidup secara keseluruhan.</p>
+        </div>
+        <div class="issue">
+            <button class="issue-title" onclick="toggleExplanation(4)">Pencemaran Cahaya</button>
+            <p class="issue-explanation" id="exp4">Pencemaran cahaya adalah penggunaan cahaya buatan di luar ruangan secara berlebihan, salah arah, atau tidak perlu, yang mengganggu lingkungan alami dan pengamatan astronomi. Sumber utama fenomena ini meliputi penerangan jalan yang buruk, papan reklame LED raksasa di perkotaan, lampu sorot keamanan, serta pencahayaan eksterior bangunan komersial dan industri yang tidak efisien. Dampak pencemaran cahaya sering kali terabaikan, namun signifikan: hal ini mengaburkan pandangan langit malam berbintang, mengganggu ritme sirkadian (siklus tidur-bangun alami) pada manusia yang dapat berdampak buruk bagi kesehatan, serta mengacaukan navigasi dan perilaku nokturnal satwa liar, seperti pola migrasi burung dan siklus reproduksi penyu laut.</p>
+        </div>
+        <div class="issue">
+            <button class="issue-title" onclick="toggleExplanation(5)">Pencemaran Plastik</button>
+            <p class="issue-explanation" id="exp5">Pencemaran plastik adalah akumulasi produk plastik dalam jumlah besar di lingkungan yang menyebabkan dampak buruk pada satwa liar, habitat, dan manusia, terutama karena sifatnya yang sulit terurai dan berumur panjang. Fenomena ini terjadi akibat penggunaan produk plastik kemasan secara masif dan pengelolaan limbah yang buruk, baik dari rumah tangga maupun industri. Dampak pencemaran ini sangat luas: di darat, plastik mencemari tanah, menghalangi sirkulasi udara, dan menurunkan kesuburan lahan, sementara di ekosistem perairan di mana Indonesia merupakan salah satu penyumbang sampah plastik terbesar kedua di dunia hewan laut sering mengira plastik sebagai makanan dan mati karena tidak dapat mencernanya. Selain itu, plastik terurai menjadi mikroplastik yang dapat masuk ke rantai makanan dan mengancam kesehatan manusia jika tertelan.</p>
+        </div>
+        <div class="issue">
+            <button class="issue-title" onclick="toggleExplanation(6)">Pencemaran Radioaktif</button>
+            <p class="issue-explanation" id="exp6">Pencemaran radioaktif adalah bentuk kontaminasi lingkungan yang terjadi akibat pengendapan atau keberadaan zat radioaktif pada permukaan atau di dalam medium bahan (padat, cair, gas), di mana keberadaannya tidak diinginkan atau melebihi batas aman yang ditetapkan. Sumber utama pencemaran ini berasal dari aktivitas manusia, terutama dari operasional reaktor nuklir, pengolahan bahan bakar nuklir, fasilitas penelitian, penggunaan isotop radioaktif di rumah sakit (kedokteran nuklir), dan yang paling umum, kesalahan penanganan serta pembuangan limbah industri yang mengandung bahan radioaktif, seperti kasus Cesium-137 (Cs-137) di Cikande, Banten, Indonesia.</p>
+        </div>
+    </div>
+
+    <!-- BUTTONS -->
+    <button class="mode-button" onclick="toggleMode()">Ubah Mode Tampilan</button>
+    <button class="image-button" onclick="window.location.href='images.html'">Tampilkan Gambar</button>
+
+    <!-- SCRIPT -->
+    <script>
+        let isMessy = false;
+        function toggleMode() {
+            const body = document.body;
+            if (isMessy) {
+                body.classList.remove('messy-mode');
+            } else {
+                body.classList.add('messy-mode');
+            }
+            isMessy = !isMessy;
+        }
+
+        function toggleExplanation(index) {
+            const exp = document.getElementById('exp' + index);
+            if (exp.style.display === 'none') {
+                if (confirm('Apakah Anda ingin menampilkan penjelasan ini?')) {
+                    exp.style.display = 'block';
+                }
+            } else {
+                if (confirm('Apakah Anda ingin menyembunyikan penjelasan ini?')) {
+                    exp.style.display = 'none';
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>
